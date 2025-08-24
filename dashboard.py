@@ -5,20 +5,20 @@ import glob
 import pandas as pd
 
 # ----------------- Dashboard Layout -----------------
-st.set_page_config(page_title="AI Powdered Surveillance System", layout="wide")
+st.set_page_config(page_title="AI Powered Surveillance System", layout="wide")
 
 # Sidebar for navigation
 menu = st.sidebar.radio("📌 Navigation", ["Overview", "Live Feed", "Alert History", "System Info"])
 
 # ----------------- Overview -----------------
 if menu == "Overview":
-    st.markdown("<h1 style='text-align: center;'>🛡️ AI Powdered Surveillance System</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: center;'>🛡️ AI Powered Surveillance System</h1>", unsafe_allow_html=True)
     st.markdown("<h3 style='text-align: center; color: gray;'>Executive Summary & Project Justification</h3>", unsafe_allow_html=True)
 
     st.write("---")
     st.subheader("🏆 Project Justification & Executive Summary")
     st.markdown("""
-    Welcome to the **AI Powdered Surveillance Dashboard**.  
+    Welcome to the **AI Powered Surveillance Dashboard**.  
     This project delivers a **complete, end-to-end machine learning solution** for detecting suspicious activities 
     such as **loitering, intrusions, and object abandonment** in real-time.
 
@@ -89,7 +89,7 @@ elif menu == "Live Feed":
 
     if alert_images:
         latest_image = alert_images[0]
-        st.image(latest_image, caption=f"Latest Alert: {os.path.basename(latest_image)}", use_column_width=True)
+        st.image(latest_image, caption=f"Latest Alert: {os.path.basename(latest_image)}", use_container_width=True)
     else:
         st.warning("⚠️ No alert image found yet.")
 
@@ -103,7 +103,7 @@ elif menu == "Alert History":
         cols = st.columns(3)
         for i, img in enumerate(alert_images[:12]):  # Show last 12 alerts
             with cols[i % 3]:
-                st.image(img, caption=os.path.basename(img), use_column_width=True)
+                st.image(img, caption=os.path.basename(img), use_container_width=True)
 
         # Table view
         timestamps = [
