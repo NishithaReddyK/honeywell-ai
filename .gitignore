@@ -1,20 +1,13 @@
-# Ignore Python virtual environment
+# Ignore virtual environments
 venv/
-ENV/
-.venv/
+.env/
+__pycache__/
+*.pyc
 
-# Ignore model weights
+# Ignore models and large weights
 *.pt
-*.pth
 *.onnx
 *.weights
 
-# Ignore cache/data
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
-*.DS_Store
-*.egg-info/
-runs/
-logs/
+# Ignore images and outputs
+outputs/*.jpg
