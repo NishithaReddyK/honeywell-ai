@@ -1,13 +1,20 @@
-# Ignore virtual environments
+# Ignore Python virtual environment
 venv/
-env/
+ENV/
 .venv/
 
-# Ignore Python cache
+# Ignore model weights
+*.pt
+*.pth
+*.onnx
+*.weights
+
+# Ignore cache/data
 __pycache__/
 *.pyc
 *.pyo
-
-# Ignore system files
-.DS_Store
-Thumbs.db
+*.pyd
+*.DS_Store
+*.egg-info/
+runs/
+logs/
